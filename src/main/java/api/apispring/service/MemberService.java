@@ -5,10 +5,12 @@ import api.apispring.repository.MemberRepository;
 import api.apispring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
 
@@ -47,6 +49,7 @@ public class MemberService {
 
             이때, Extract Method 기능을 사용하여 메소드화하면 코드가 간단해진다.
          */
+
         validateDuplicateMember(member); // 중복 회원 검증
         memberRepository.save(member);
         return member.getId();

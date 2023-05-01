@@ -1,8 +1,15 @@
 package api.apispring.domain;
 
-public class Member {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Member {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)  // @GeneratedValue(...IDENTITY) : seq 등을 db 자동생성해줌
     private Long id;
+
     private String name;
 
     public Long getId() {
