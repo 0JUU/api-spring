@@ -1,6 +1,7 @@
 package api.apispring.repository;
 
 import api.apispring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
